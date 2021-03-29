@@ -1,9 +1,6 @@
 import express from "express";
 import data from "./data.js";
 
-// const express = require("express");
-// const data = require("./src/data.js");
-
 const app = express();
 
 app.get("/api/products/:id", (req, res) => {
@@ -11,7 +8,7 @@ app.get("/api/products/:id", (req, res) => {
   if (product) {
     res.send(product);
   } else {
-    res.status(404).send({ message: "Product not Found" });
+    res.status(404).send({ message: "Product Not Found" });
   }
 });
 
