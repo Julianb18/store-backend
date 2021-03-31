@@ -1,4 +1,20 @@
+import bcrypt from "bcryptjs";
+
 const data = {
+  users: [
+    {
+      name: "Julian",
+      email: "admin@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "Temi",
+      email: "user@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       _id: "1",
@@ -29,7 +45,7 @@ const data = {
       _id: "3",
       name: "Logitech G903 LIGHTSPEED",
       category: "Mouse",
-      image: "/images/logitech.jpg",
+      image: "/images/logitech.png",
       price: 95.0,
       countInStock: 3,
       brand: "Logitech",

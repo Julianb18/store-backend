@@ -1,10 +1,26 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _bcryptjs = _interopRequireDefault(require("bcryptjs"));
+
 var data = {
+  users: [{
+    name: "Julian",
+    email: "admin@example.com",
+    password: _bcryptjs["default"].hashSync("1234", 8),
+    isAdmin: true
+  }, {
+    name: "Temi",
+    email: "user@example.com",
+    password: _bcryptjs["default"].hashSync("1234", 8),
+    isAdmin: false
+  }],
   products: [{
     _id: "1",
     name: "Razer Viper Ultimate",
@@ -31,7 +47,7 @@ var data = {
     _id: "3",
     name: "Logitech G903 LIGHTSPEED",
     category: "Mouse",
-    image: "/images/logitech.jpg",
+    image: "/images/logitech.png",
     price: 95.0,
     countInStock: 3,
     brand: "Logitech",
