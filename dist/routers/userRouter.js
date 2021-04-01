@@ -29,19 +29,15 @@ userRouter.get("/seed", (0, _expressAsyncHandler["default"])( /*#__PURE__*/funct
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _userModel["default"].remove({});
-
-          case 2:
-            _context.next = 4;
             return _userModel["default"].insertMany(_data["default"].users);
 
-          case 4:
+          case 2:
             createdUsers = _context.sent;
             res.send({
               createdUsers: createdUsers
             });
 
-          case 6:
+          case 4:
           case "end":
             return _context.stop();
         }

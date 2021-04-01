@@ -9,7 +9,8 @@ const userRouter = express.Router();
 userRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
-    await User.remove({});
+    //expressAsyncHandler is middleware to show correct error on front end
+    // await User.remove({});
     const createdUsers = await User.insertMany(data.users);
     res.send({ createdUsers });
   })
