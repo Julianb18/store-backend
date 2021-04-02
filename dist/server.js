@@ -6,11 +6,19 @@ var _express = _interopRequireDefault(require("express"));
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
 var _productRouter = _interopRequireDefault(require("./routers/productRouter.js"));
 
 var _userRouter = _interopRequireDefault(require("./routers/userRouter.js"));
 
+_dotenv["default"].config();
+
 var app = (0, _express["default"])();
+app.use(_express["default"].json());
+app.use(_express["default"].urlencoded({
+  extended: true
+}));
 
 _mongoose["default"].connect(process.env.MONGODB_URL || "mongodb://localhost/gamer", {
   useNewUrlParser: true,
