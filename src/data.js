@@ -21,7 +21,7 @@ const data = {
       category: "Mouse",
       image:
         "https://assets.kogan.com/files/product/etail/Razer-/RAZ-RZ01-03050100_1.jpg?auto=webp&canvas=753%2C502&fit=bounds&height=502&quality=75&width=753",
-      price: 120.95,
+      price: 135.99,
       countInStock: 10,
       brand: "Razer",
       rating: 5,

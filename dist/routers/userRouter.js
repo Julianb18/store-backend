@@ -104,5 +104,42 @@ userRouter.post("/signin", (0, _expressAsyncHandler["default"])( /*#__PURE__*/fu
     return _ref2.apply(this, arguments);
   };
 }()));
+userRouter.post("/register", (0, _expressAsyncHandler["default"])( /*#__PURE__*/function () {
+  var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
+    var user, createdUser;
+    return _regenerator["default"].wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            user = new _userModel["default"]({
+              name: req.body.name,
+              email: req.body.email,
+              password: _bcryptjs["default"].hashSync(req.body.password, 8)
+            });
+            _context3.next = 3;
+            return user.save();
+
+          case 3:
+            createdUser = _context3.sent;
+            res.send({
+              _id: user._id,
+              name: user.name,
+              email: user.email,
+              isAdmin: user.isAdmin,
+              token: (0, _utils.generateToken)(createdUser)
+            });
+
+          case 5:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function (_x5, _x6) {
+    return _ref3.apply(this, arguments);
+  };
+}()));
 var _default = userRouter;
 exports["default"] = _default;

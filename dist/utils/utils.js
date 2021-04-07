@@ -15,7 +15,7 @@ var generateToken = function generateToken(user) {
     name: user.name,
     email: user.email,
     isAdmin: user.isAdmin
-  }, process.env.JWT_SECRET || "somethingsecret", {
+  }, process.env.JWT_SECRET, {
     expiresIn: "30d"
   });
 };
